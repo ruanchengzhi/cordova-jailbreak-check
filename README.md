@@ -1,4 +1,5 @@
-# cordova-jailbreak-check V1.0.2
+# cordova-jailbreak-check V1.0.3
+源作者没见危害，新增判断方式
 自定义插件用于检测系统IOS是否越狱Android是否被Root；
 
 ## 1、添加插件方式：
@@ -37,5 +38,5 @@ this.platform.ready().then(() => {
 ```
 
 ## Support
-- 邮箱：(wangwenxy@163.com)
+- 邮箱：(ruantc@163.com)
 - [故障反馈地址：](https://github.com/ww-gh/cordova-jailbreak-check/issues)

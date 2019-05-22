@@ -45,6 +45,7 @@ public class JailBreakCheck extends CordovaPlugin {
     public boolean isRoot() {
         String binPath = "/system/bin/su";
         String xBinPath = "/system/xbin/su";
+        String sBinPath = "/system/sbin/su"; //add by rcz
 
         if (new File(binPath).exists() && isCanExecute(binPath)) {
             return true;
@@ -52,7 +53,9 @@ public class JailBreakCheck extends CordovaPlugin {
         if (new File(xBinPath).exists() && isCanExecute(xBinPath)) {
             return true;
         }
-
+        if (new File(sBinPath).exists() && isCanExecute(sBinPath)) {
+            return true;
+        }
         return false;
     }
 
@@ -79,6 +82,9 @@ public class JailBreakCheck extends CordovaPlugin {
 
     /**
      * 第二种方式
+     * 1. 查看系统是否测试版
+     * 2. 检查是否存在Superuser.apk
+     * 3. 检查su命令
      * @return
      */
     public boolean isDeviceRooted() {
